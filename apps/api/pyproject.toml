@@ -1,0 +1,22 @@
+cat > apps/api/pyproject.toml << 'EOF'
+[project]
+name = "leaf-api"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi==0.114.0",
+  "uvicorn[standard]==0.30.6",
+  "pydantic==2.8.2",
+  "sqlalchemy==2.0.31",
+  "psycopg2-binary==2.9.9",
+  "python-dotenv==1.0.1",
+  "redis==5.0.7",
+  "celery==5.4.0",
+  "pandas==2.2.2"
+]
+
+[tool.uvicorn]
+factory = true
+host = "0.0.0.0"
+port = 8000
+EOF
